@@ -36,8 +36,9 @@ process.on('SIGINT', () => {
 
 const app = setupExpress();
 const server = http.createServer(app);
+const port = process.env.PORT || config.port;
 
-server.listen(config.port, () => {
+server.listen(port, () => {
   Console.info('APPLICATION STARTED ON PORT => ', config.port);
 });
 
